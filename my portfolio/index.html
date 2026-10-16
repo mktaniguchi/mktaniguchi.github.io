@@ -5,19 +5,20 @@
 		<meta charset="UTF-8">
 		
 		<link rel="stylesheet"href="style.css">
+		<link rel="stylesheet" type="text/css" href="hover.css">
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP:wght@100..900&family=Plaster&display=swap" rel="stylesheet">
 
 	</head>
- 
+
 	<body>
 		<div class="base">
 		
 			<br>
 			
-			<div class="title">
+			<div id="top" class="title">
 				Miku　Taniguchi<br>
 				Portfolio
 			</div>
@@ -25,7 +26,7 @@
 			<div class="box1"style="position:relative;">
 				<img src="猫.png"width=100%">
 					<div class="neko" style="position:absolute; z-index:1;">
-						Thank you <br>
+						Thank you<br>
 						for<br> 
 						watching!!
 					</div>
@@ -40,19 +41,17 @@
 			
 			<div class="box3">
 				<span class="under">Menu</span>
-				<br>
-				<a href="#Aboutme">●About me </a>
-				<br>
-				<br>
-				<a href="#Skill">●Skill </a>
-				<br>
-				<br>		
-				<a href="#Like">●Favorite</a>
-				<br>
-				<br>
-				<a href="#Gallery">●Handmade Gallery</a>
-				
-				
+					<br>
+				<a href="#Aboutme"><span class="hvr-grow" style="text-decoration: underline;">●About me </span></a>
+					<br>
+					<br>
+				<a href="#Skill"><span class="hvr-grow"style="text-decoration: underline;">●Skill </span></a>
+					<br>
+					<br>		
+				<a href="#Like"><span class="hvr-grow"style="text-decoration: underline;">●Favorite</span></a>
+					<br>
+					<br>
+				<a href="#Gallery"><span class="hvr-grow"style="text-decoration: underline;">●Handmade Gallery</span></a>
 			</div>
 			
 			<div style="clear:both;">
@@ -74,9 +73,14 @@
 			<br>
 			<br>
 						
-			<div class="subtitle">
+			<div id="Aboutme" class="subtitle">
 				About me...
-				<div id="Aboutme"></div>
+			</div>
+			
+			<div class="hvr-grow-rotate" style="float:right;">
+				<div class="box23">
+					<a href="#top">↑TOP</a>
+				</div>
 			</div>
 			
 			<br>
@@ -93,7 +97,9 @@
 			</div>
 			
 			<div class="box5">
-				<div class="name">Miku Taniguchi</div>
+				<div class="name">
+					Miku Taniguchi
+				</div>
 				<br>
 				1997年　京都府京都市生まれ。<br>
 				ブライダルの専門学校を卒業後、<br>
@@ -101,6 +107,7 @@
 				30歳を目前に新しいことに挑戦することを決意。<br>
 				現在、京都アズール訓練校にてWEBクリエイターになるため、日々勉強中。<br>
 			</div>
+			
 			<div style="clear:both;">
 			</div>
 			
@@ -117,14 +124,36 @@
 			<br>
 			<br>
 			
-			<div class="box6">
-			<span style="font-weight:bold;font-size:23px;">高校時代</span>　　　　　　京都府立京都すばる高等学校　企画科。吹奏楽部に所属し、ひたすら部活に明け暮れる。<br>
-			<span style="font-weight:bold;font-size:23px;">専門学校時代</span>　　　キャリエールホテル旅行専門学校　ブライダル学科に所属。<br>
-			<span style="font-weight:bold;font-size:23px;">社会人時代①</span>　　　ゲストハウスに就職。ウェディングプランナーとして従事。<br>
-			<span style="font-weight:bold;font-size:23px;">社会人時代②</span>　　　洋菓子メーカーに就職。販売スタッフおよび店長職も経験。<br>
-			<span style="font-weight:bold;font-size:23px;">社会人時代③</span>　　　医薬品メーカーに就職。受付事務に従事。<br>
-			<span style="font-weight:bold;font-size:23px;">社会人時代④</span>　　　ファストフード店に就職。販売スタッフとして従事。<br>
-			<span style="font-weight:bold;font-size:23px;">現在</span>　　　　　　　　新しいことに挑戦すべく職業訓練にて猛勉強中！！
+			<div class="box6"style="position:relative;">
+				<table style="width:100%;color:#8b4513;">
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">高校時代</span></td>
+						<td style="width:75%;">京都府立京都すばる高等学校　企画科。吹奏楽部にて関西大会出場を果たす。</td>
+					</tr>
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">専門学校時代</span></td>
+						<td style="width:75%;">キャリエールホテル旅行専門学校　ブライダル学科に所属。</td>
+					</tr>
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">社会人時代①</span></td>
+						<td style="width:75%;">株式会社京都山中商会に就職。ウェディングプランナーとして従事。</td>
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">社会人時代②</span></td>
+						<td style="width:75%;">株式会社BAKEに就職。京都店にて店舗社員として約３年６か月間、そのあと店長に就任し、約１年間務める。</td>
+					</tr>
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">社会人時代③</span></td>
+						<td style="width:75%;">マンパワーグループ株式会社に就職。医薬品メーカーにて受付事務を担当する。</td>
+					</tr>
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">社会人時代④</span></td>
+						<td style="width:75%;">株式会社スープストックトーキョーに就職。大阪店にて販売スタッフを務める。</td>
+					</tr>
+					<tr>
+						<td style="width:25%;text-align:center;"><span style="font-weight:bold;font-size:23px;">現在</span></td>
+						<td style="width:75%;">新しい職種に挑戦することを決意。WEBクリエイターになるため職業訓練にて専門的なスキルを学ぶ。</td>
+					</tr>
+				</table>
 			</div>
 			
 			<br>
@@ -143,9 +172,14 @@
 			<br>
 			<br>
 			
-			<div class="subtitle">
+			<div id="Skill" class="subtitle">
 				Skill...
-				<div id="Skill"></div>
+			</div>
+			
+			<div class="hvr-grow-rotate" style="float:right;">
+				<div class="box23">
+					<a href="#top">↑TOP</a>
+				</div>
 			</div>	
 			
 			<br>
@@ -160,26 +194,52 @@
 			</div>
 			
 			<div class="box9"style="position:relative;">
-				<div style="position:absolute; width:100px; top:40px; left:50px;">
-				<img src="html.png" width="100%">
+				<div style="position:absolute; width:100px; top:50px; left:50px;">
+					<img src="html.png" width="100%">
 				</div>
-				<div style="position:absolute; width:100px; top:40px; left:200px;">
-				<img src="css.png" width="100%">
+				
+				<div style="position:absolute; width:100px; top:50px; left:200px;">
+					<img src="css.png" width="100%">
 				</div>
-				<div style="position:absolute; width:100px; top:40px; right:50px;">
-				<img src="php.png" width="100%">
+				
+				<div style="position:absolute; width:100px; top:50px; right:50px;">
+					<img src="php.png" width="100%">
 				</div>
-				<div style="position:absolute; width:100px; bottom:40px; left:125px;">
-				<img src="java.png" width="100%">
+				
+				<div style="position:absolute; width:100px; bottom:50px; left:125px;">
+					<img src="java.png" width="100%">
 				</div>
-				<div style="position:absolute; width:100px; bottom:40px; right:125px;">
-				<img src="canva.png" width="100%">
+				
+				<div style="position:absolute; width:100px; bottom:50px; right:125px;">
+					<img src="canva.png" width="100%">
 				</div>
 			</div>
 			
-			<div class="box10">
-				2026年6月　秘書検定2級
-			</div>	
+			<div class="box10" style="position:relative;">
+				<table style="width:100%;color:#8b4513;">
+					<tr>
+						<td style="width:25%;">2016年11月</td>
+						<td style="width:75%;">サービス接遇実務検定試験準1級</td>
+					</tr>
+					<tr>
+						<td style="width:25%;">2017年07月</td>
+						<td style="width:75%;">色彩検定３級</td>
+					</tr>
+					<tr>
+						<td style="width:25%;">2017年12月</td>
+						<td style="width:75%;">３級レストランサービス技能士</td>
+					</tr>
+					<tr>
+						<td style="width:25%;">2018年01月</td>
+						<td style="width:75%;">アシスタント・ブライダル・コーディネーター検定試験</td>
+					</tr>
+					<tr>
+						<td style="width:25%;">2026年06月</td>
+						<td style="width:75%;">秘書検定2級</td>
+					</tr>
+				</table>
+			</div>
+			
 			<div style="clear:both;">
 			</div>	
 			
@@ -199,19 +259,38 @@
 			<br>
 			<br>
 			
-			<div class="subtitle">
+			<div id="Like" class="subtitle">
 				Favorite...
-				<div id="Like"></div>
 			</div>
+
+			<div class="hvr-grow-rotate" style="float:right;">
+				<div class="box23">
+					<a href="#top">↑TOP</a>
+				</div>
+			</div>
+			
+			<br>
 			<br>
 			<br>
 			
-			<div class="box14">
+			<div class="box14"style="position:relative;">
 				<div class="syumi">Eating</div>
 					<br>
 					おいしいものを<br>
 					食べることが大好き。<br>
-					スイーツよりもご飯派です。
+					スイーツよりも<br>
+					ご飯派です。<br>
+						<div style="position:absolute; width:64px; top:40px; left:-30px;">
+							<img src="gohan.png" width="100%">
+						</div>
+						
+						<div style="position:absolute; width:64px; bottom:40px; right:-30px;">
+							<img src="medamayaki.png" width="100%">
+						</div>
+						
+						<div style="position:absolute; width:88px;bottom:-20px;left:-30px;">
+							<img src="supoon.png" width="100%">
+						</div>
 			</div>
 			
 			<div class="box15"style="position:relative;">
@@ -223,18 +302,35 @@
 					<br>
 					<br>
 					パンチニードルとは<br>
-					パンチニードルペンを<br>
-					使用した立体刺繍のこと。<br>
+					立体刺繍のこと。<br>
 					キャラクターを<br>
-					刺繍するのが好きです。
+					刺繍するのが好きです。<br>
+						<div style="position:absolute; width:64px; top:90px; left:-40px;">
+							<img src="kuma.png" width="100%">
+						</div>
+						
+						<div style="position:absolute; width:110px; top:60px; right:-60px;">
+							<img src="needle.png" width="100%">
+						</div>
+						
+						<div style="position:absolute; width:48px;bottom:-10px;right:60px;">
+							<img src="ribon.png" width="100%">
+						</div>
 			</div>
 			
-			<div class="box16">
+			<div class="box16"style="position:relative;">
 				<div class="syumi">Crochet</div>
 				<br>
 					かぎ針編み。<br>
-					2026年9月に始めたばかりの<br>
-					まだまだ初心者です。<br>
+					まだまだ初心者ですが、<br>
+					最近の一番の<br>
+					マイブームです。
+						<div style="position:absolute; width:64px; top:30px; right:-35px;">
+							<img src="keito.png" width="100%">
+						</div>
+						<div style="position:absolute; width:100px; bottom:10px; left:-35px;">
+							<img src="keito2.png" width="100%">
+						</div>
 			</div>		
 					
 			<div style="clear:both;">
@@ -243,21 +339,42 @@
 			<br>
 			<br>
 			
-			<div class="box17">
+			<div class="box17"style="position:relative;">
 				<div class="syumi">Cat</div>
 					<br>
-					実家で猫を2匹飼っています。<br>
-					毎日の猫吸いが<br>
+					実家で猫を2匹<br>
+					飼っています。<br>
+					猫をもふることが<br>
 					日々の癒しです。
+						<div style="position:absolute; width:64px; bottom:30px; left:-35px;">
+							<img src="neko.png" width="100%">
+						</div>
+						<div style="position:absolute; width:64px; top:30px; right:-35px;">
+							<img src="ashiato.png" width="100%">
+						</div>
+						<div style="position:absolute; width:64px;bottom:-5px;left:10px;">
+							<img src="neko2.png" width="100%">
+						</div>
 			</div>
+			
 			<div class="box18">
 				<div class="syumi">V tuber</div>
 					<br>
-					「にじさんじ」という事務所に<br>
-					所属されている方を<br>
-					応援しています。<br>
-					推し活最高！！！
+					推しは甲斐田晴さんと<br>
+					ローレン・イロアスさんです。<br>
+					気になる方は<br>
+					ぜひ調べてみてください♡<br>
+						<div style="position:absolute; width:120px;top:10px;left:-60px;">
+							<img src="douga.png" width="100%">
+						</div>
+						<div style="position:absolute; width:90px; bottom:-10px; right:-35px;">
+							<img src="game.png" width="100%">
+						</div>
+						<div style="position:absolute; width:64px; bottom:-20px; left:-20px;">
+							<img src="penlight.png" width="100%">
+						</div>
 			</div>
+			
 			<div style="clear:both;">
 			</div>
 			
@@ -277,84 +394,146 @@
 			<br>
 			<br>
 			
-			<div class="subtitle">
+			<div id="Gallery" class="subtitle">
 				Handmade Gallery...
-				<div id="Gallery"></div>
+			</div>
+			
+			<div class="hvr-grow-rotate" style="float:right;">
+				<div class="box23">
+					<a href="#top">↑TOP</a>
+				</div>
 			</div>
 			
 			<br>
 			<br>
 			<br>
 			<br>
+			<br>
+			<br>
 			
-			<div class="box19">
-				<img src="berubukuro.jpg" width="100%">
-			</div>
-			<div class="box20">
-				<img src="happa.jpg" width="100%">
-			</div>
-			<div class="box21">
-				<img src="kaseki.jpg" width="100%">
-			</div>
-			<div class="box22">
-				<img src="hoshi.jpg" width="100%">
-			</div>
+			<span class="hvr-grow">
+				<div class="box19">
+					<img src="berubukuro.jpg" width="100%"></span>
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box20">
+					<img src="happa.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box21">
+					<img src="kaseki.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box22">
+					<img src="hoshi.jpg" width="100%">
+				</div>
+			</span>
+			
 			<div style="clear:both;">
 			</div>
 			
 			<br>
 			<br>
 			
-			<div class="box19">
-				<img src="chiikabu.jpg" width="100%">
-			</div>
-			<div class="box20">
-				<img src="pajama.jpg" width="100%">
-			</div>
-			<div class="box21">
-				<img src="harutown.jpg" width="100%">
-			</div>
-			<div class="box22">
-				<img src="hana.jpg" width="100%">
-			</div>
+			<span class="hvr-grow">
+				<div class="box19">
+					<img src="chiikabu.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box20">
+					<img src="pajama.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box21">
+					<img src="harutown.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box22">
+					<img src="hana.jpg" width="100%">
+				</div>
+			</span>
+			
 			<div style="clear:both;">
 			</div>
 			
 			<br>
 			<br>
 			
-			<div class="box19">
-				<img src="ogentown.jpg" width="100%">
-			</div>
-			<div class="box20">
-				<img src="ribon.jpg" width="100%">
-			</div>
-			<div class="box21">
-				<img src="tulip.jpg" width="100%">
-			</div>
-			<div class="box22">
-				<img src="syusyu.jpg" width="100%">
-			</div>
+			<span class="hvr-grow">
+				<div class="box19">
+					<img src="ogentown.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box20">
+					<img src="ribon.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box21">
+					<img src="tulip.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box22">
+					<img src="syusyu.jpg" width="100%">
+				</div>
+			</span>
+			
 			<div style="clear:both;">
 			</div>
 			
 			<br>
 			<br>
 			
-			<div class="box19">
-				<img src="batumaru.jpg" width="100%">
-			</div>
-			<div class="box20">
-				<img src="kintyaku.jpg" width="100%">
-			</div>
-			<div class="box21">
-				<img src="bag.jpg" width="100%">
-			</div>
-			<div class="box22">
-				<img src="aisu.jpg" width="100%">
-			</div>
+			<span class="hvr-grow">
+				<div class="box19">
+					<img src="batumaru.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box20">
+					<img src="kintyaku.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box21">
+					<img src="bag.jpg" width="100%">
+				</div>
+			</span>
+			
+			<span class="hvr-grow">
+				<div class="box22">
+					<img src="aisu.jpg" width="100%">
+				</div>
+			</span>
+			
 			<div style="clear:both;">
 			</div>
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
 		</div>
 		
 	</body>
