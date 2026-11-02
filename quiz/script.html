@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<style>
+			.question{
+				width:600px;
+				height:100px;
+				font-size:20px;
+				border:solid 1px #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding:20px;
+				margin:0 auto;
+			}
+			
+			.left{
+				width:280px;
+				height:80px;
+				float:left;
+				font-size:16px;
+				border:solid 1px #000;
+				background-color:#fcf9b0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding:10px;
+				margin-top:10px;
+			}
+			
+			.right{
+				width:280px;
+				height:80px;
+				float:right;
+				font-size:16px;
+				border:solid 1px #000;
+				background-color:#fcf9b0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding:10px;
+				margin-top:10px;
+			}
+			
+			.answer{
+				width:100px;
+				height:60px;
+				margin:0 auto;
+				margin-top:50px;
+				font-size:20px;
+				border:solid 1px #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+
+		<script>
+			var data = [
+				["猫が暗い場所でも比較的よく物を見られるのはなぜ？","瞳に光を蓄えるため","目の奥に光を反射する仕組みがあるため","人間より色を多く見分けられるため","目が常に発光しているため","2"],
+				["猫のひげには、どのような役割がある？","体温を調節する","音を発生させる","周囲の物や空気の動きを感じ取る","食べ物の味を判別する","3"],
+				["猫がゴロゴロと喉を鳴らすのはどんなとき？","うれしいときだけ","眠いときだけ","空腹のときだけ","くつろいでいるときや不安・痛みがあるときなど","4"],
+				["一般的な猫の前足には、指がいくつある？","4本","5本","6本","7本","2"],
+				["猫が獲物を狙うときに、お尻を小刻みに振ることがあるのはなぜ？","体を温めるため","相手を威嚇するため","飛びかかるために姿勢や足場を整えるため","獲物に合図を送るため","3"],
+				["猫にとって、ユリの植物はどう？","少量なら安全","花粉だけが危険","猫が嫌うだけで毒性はない","腎臓に深刻な障害を起こすことがある","4"],
+				["猫の鼻が濡れていることについて、正しいのはどれ？","濡れていれば必ず健康","乾いていれば必ず病気","濡れ具合だけで健康状態は判断できない","鼻の濡れ具合は年齢だけで決まる","3"],
+				["猫の祖先に近いとされる野生動物はどれ？","リビアヤマネコ","オオヤマネコ","チーター","トラ","1"],
+				["猫が高い場所を好むことが多い理由は？","高い場所では必ず眠くなるから","周囲を見渡せて安心できることがあるから","高い場所では音が聞こえなくなるから","高い場所では必ず体温が下がるから","2"],
+				["一般的な猫の妊娠期間はどのくらい？","約30日","約45日","約63〜65日","約100日","3"],
+				["猫の聴覚について、正しいのはどれ？","人間より高い音を聞き取れる","人間より低い音だけ得意","人間とほぼ同じ音域しか聞こえない","超音波しか聞こえない","1"],
+				["猫が前足で毛布などをふみふみする行動の由来として、考えられているのは？","獲物を捕まえる練習","子猫が母猫のお乳を飲むときの動き","爪を短くするための運動","体温を測るため","2"],
+				["猫の舌の表面にあるザラザラした突起の主な役割は？","毛づくろいや食べ物を扱うのに役立つ","音を聞き取る","体温を一定に保つ","暗闇で光る","1"],
+				["猫がしっぽをピンと立てて近づいてくるとき、どのような気持ちを表すことが多い？","強い恐怖","眠気","親しみや友好的な気持ち","必ず怒っている","3"],
+				["猫の肉球に関する説明で、正しいのはどれ？","体の中で最も硬い部分","汗をかくことがある","音を聞くための器官","爪を伸ばす器官","2"],
+				["猫が自分の体をなめて毛づくろいする主な理由は？","毛並みを整え、体を清潔に保つため","必ず空腹だから","飼い主に怒っているから","眠気をなくすため","1"],
+				["一般的に、猫のひげはどこに生えている？","口の周りだけ","口の周りや目の上、前足の一部など","しっぽだけ","耳の内側だけ","2"],
+				["猫が箱の中に入りたがる理由として、考えられるのは？","箱の中では必ず眠くなるから","箱に入ると視力が上がるから","狭い空間が安心でき、隠れ場所にもなるから","箱の中では音が聞こえなくなるから","3"],
+				["猫の瞳孔（黒目の部分）が縦長の細い線のようになるのは、主にどんなとき？","明るい場所にいるとき","真っ暗な場所にいるときだけ","眠っているときだけ","食事中だけ","1"],
+				["猫にとって、チョコレートはどう？","少量なら必ず安全","猫の主食に適している","毒性があり、食べさせない方がよい","毛づやをよくする食べ物","3"],
+				["猫の歯は、成猫になると全部で何本ある？","20本","26本","30本","36本","3"],
+				["猫が獲物を捕まえたあとに、前足で押さえたり噛んだりするのはなぜ？","獲物を食べられる状態にするため","獲物に遊び方を教えるため","体温を測るため","眠気をなくすため","1"],
+				["猫の平均的な体温は、人間と比べてどう？","人間より低い","人間とほぼ同じ","人間より高い","季節によって必ず人間より低くなる","3"],
+				["猫が耳を後ろに倒しているときに考えられる気持ちは？","必ずうれしい","不安や警戒、怒りなど","必ず眠い","必ずお腹がすいている","2"],
+				["猫の目が暗い場所で光って見える現象に関係するものは？","耳の奥にある骨","舌の表面の突起","鼻の中の粘膜","目の奥にある反射層","4"],
+				["猫が水を飲むとき、主にどのようにして水を口に運ぶ？","舌を使ってすくい上げる","ストローのように吸い込む","前足だけで口に運ぶ","歯の隙間から吸い込む","1"],
+				["猫の爪について、正しい説明はどれ？","一生伸びない","後ろ足の爪だけ伸びる","爪とぎは古い爪の外層をはがすのに役立つ","爪とぎをすると爪がなくなる","3"],
+				["猫が飼い主の体や家具に頬をこすりつける行動には、どんな意味がある？","必ずかゆみがある","においをつけて自分の存在を示す","食べ物を探している","体温を測っている","2"],
+				["猫の瞳孔の大きさが変わる主な理由のひとつは？","毛の長さを調節するため","耳の向きを変えるため","食べ物の味を変えるため","目に入る光の量を調節するため","4"],
+				["猫に牛乳を与えることについて、正しい説明はどれ？","多くの猫は乳糖をうまく消化できず、お腹を壊すことがある","すべての猫に毎日必要","牛乳だけで必要な栄養をすべて補える","牛乳は猫にとって必ず無害","1"]
+				];
+		</script>
+		
+	</head>
+
+	<body>
+		<div style="width:650px; margin:0 auto;margin-top:20px;">
+			<div style = "text-align:center;font-size:36px;font-weight:bold;color:#8b4513;">🐈ねこクイズ🐈</div>
+			
+			<br>
+			
+			<div id="mondai" class="question">問題</div>
+			
+			<br>
+			
+			<div id="sentaku1" class="left" onclick="clk(1)">選択肢1</div>
+			<div id="sentaku2" class="right" onclick="clk(2)">選択肢2</div>
+		
+			<div style="clear:both;"></div>
+		
+			<div id="sentaku3" class="left"onclick="clk(3)">選択肢3</div>
+			<div id="sentaku4" class="right"onclick="clk(4)">選択肢4</div>
+		
+			<div style="clear:both;"></div>
+					
+			<div id="kotae" class="answer"onclick="final()">回答</div>
+			
+		</div>
+		
+		<script>
+			var finalanswer="0"
+			var clickanswer="0"
+			
+			//配列が何行あるかを求める。
+			var max = data.length;
+			
+			//０～２までの乱数を発生させる→ 変数 r にいれる
+			var r = Math.floor(Math.random() * max);
+			
+			//data[r][0]に入っている文字を id="mondai" の要素に入れる
+			document.getElementById("mondai").innerHTML = data[r][0];
+			
+			//data[r][1] に入っている文字を id="sentaku1" の要素に入れる
+			document.getElementById("sentaku1").innerHTML = data[r][1];
+			
+			//data[r][2] に入っている文字を id="sentaku2" の要素に入れる
+			document.getElementById("sentaku2").innerHTML = data[r][2];
+			
+			//data[r][3] に入っている文字を id="sentaku3" の要素に入れる
+			document.getElementById("sentaku3").innerHTML = data[r][3];
+			
+			//data[r][4] に入っている文字を id="sentaku4" の要素に入れる
+			document.getElementById("sentaku4").innerHTML = data[r][4];
+			
+			finalanswer=data[r][5];
+
+			function clk(no) {
+				//
+				// 4つのdivを元の色に戻す
+				document.getElementById("sentaku1").style.backgroundColor = "";
+				document.getElementById("sentaku2").style.backgroundColor = "";
+				document.getElementById("sentaku3").style.backgroundColor = "";
+				document.getElementById("sentaku4").style.backgroundColor = "";
+
+				//クリックされた要素のbackground-colorを#feeに変更する
+				var id="sentaku" + no
+				var element = document.getElementById(id);
+				element.style.backgroundColor = "#f9b027";
+				
+				clickanswer=no;
+
+			}
+			
+			function final(){
+				if(clickanswer==0){
+				return;
+				}
+				
+				if(finalanswer==clickanswer){
+					document.getElementById("mondai").innerHTML="正解！";
+					}else{
+					document.getElementById("mondai").innerHTML="残念！";
+					}
+			}
+		</script>
+		
+	</body>
+</html>
