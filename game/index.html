@@ -12,7 +12,7 @@
 			.box{
 				width:50px; 
 				height:50px; 
-				background-color:#ff2e6a;
+				background-color:#000;
 				color:#fff;
 				font-size:16px;
 				float:left;
@@ -26,7 +26,7 @@
 			.stamina{
 				width:70px;
 				height:25px;
-				background-color:#ffa49f;
+				background-color:#f00;
 				margin-left:5px;
 				margin-top:5px;
 			}
@@ -37,10 +37,10 @@
 				font-size:10px;
 				position:absolute;
 				left:-100px;
-				bottom:-50px;
+				bottom:-10px;
 				text-align:center;
 				color:#fff;
-				background-color:#4d4d4f;
+				background-color:#000;
 			}
 			
 			.score{
@@ -57,8 +57,8 @@
 				font-size:28px;
 				position:absolute;
 				right:-100px;
-				top:50px;border:5px solid #4d4d4f;
-				color:#4d4d4f;
+				top:50px;border:5px solid #000;
+				color:#000;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -89,7 +89,7 @@
 				font-size:24px;
 				margin-top:30px;
 				color:#fff;
-				background-color:#4d4d4f;
+				background-color:#000;
 				
 			}
 			
@@ -99,7 +99,7 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color:rgba(255,105,180,0.6);
+				background-color:rgba(255,0,0,0.6);
 				display:none;
 				z-index:10;
 				text-align:center;
@@ -118,7 +118,7 @@
 				font-size:24px;
 				margin-top:30px;
 				color:#fff;
-				background-color:#4d4d4f;
+				background-color:#000;
 			}
 			
 			div{
@@ -210,10 +210,10 @@
 
 
 	<body>
-		<div style ="width:600px; margin:0 auto; margin-top:30px; text-align:center; font-size:40px; color:#4d4d4f;">
+		<div style ="width:600px; margin:0 auto; margin-top:40px; text-align:center; font-size:32px; color:#000;">
 			Pair Game
 		</div>
-		<div id="center" style="width:600px; margin:0 auto; margin-top:10px; position:relative;">
+		<div id="center" style="width:600px; margin:0 auto; margin-top:15px; position:relative;">
 			<div id="b0" class="box hvr-grow" onclick="clk(0);">1</div>
 			<div id="b1" class="box hvr-grow" onclick="clk(1);">1</div>
 			<div id="b2" class="box hvr-grow" onclick="clk(2);">2</div>
@@ -304,11 +304,11 @@
 			
 			<br>
 			
-			<button onclick="start();" class="hvr-box-shadow-outset" style="font-size:24px; color:#fff; background-color:#4d4d4f; width:220px; height:80px; float:right; margin-right:-140px; margin-top:-50px;">
+			<button onclick="start();" class="hvr-box-shadow-outset" style="font-size:24px; color:#fff; background-color:#000; width:220px; height:80px; float:right; margin-right:-140px; margin-top:-50px;">
 				START
 			</button>
 			
-			<div style="width:180px; height:50px; font-size:24px; color:#4d4d4f; position:absolute;right:-100px;top:10px;text-align:center;">
+			<div style="width:180px; height:50px; font-size:24px; color:#000; position:absolute;right:-100px;top:10px;text-align:center;">
 				TIME
 			</div>
 			
@@ -316,7 +316,7 @@
 				00:00
 			</div>
 			
-			<div style="width:300px; height:50px; font-size:24px; color:#4d4d4f; position:absolute; right:-170px; top:180px; text-align:center;">
+			<div style="width:300px; height:50px; font-size:24px; color:#000; position:absolute; right:-170px; top:180px; text-align:center;">
 				🌟SCORE🌟
 				<div class="score">
 					🥇<span id="s1"> 00:00 </span>
@@ -333,7 +333,7 @@
 			
 			
 			
-			<div style="width:90px; height:490px;position:absolute;left:-100px;top:10px;border:5px solid #4d4d4f;text-align:center;">
+			<div style="width:90px; height:490px;position:absolute;left:-100px;top:10px;border:5px solid #000;text-align:center;">
 				<div id="c1" class="stamina"></div>
 				<div id="c2" class="stamina"></div>
 				<div id="c3" class="stamina"></div>
@@ -352,8 +352,10 @@
 				<div id="c16" class="stamina"></div>
 			</div>
 			
-			<button class="charge hvr-box-shadow-outset"" onclick="charge();">
-				Charge
+			<button class="charge hvr-box-shadow-outset" style="position:relative;" onclick="charge();">
+					<div style="width:30px; height:30px;position:absolute;top:8px;left:25px;">
+						<img src="heart.png"width=100%">
+					</div>
 			</button>
 			
 			<div id="gameover">
@@ -371,6 +373,7 @@
 			var t = 0;				//経過時間
 			var timer = 0; 			//経過時間用タイマー
 			var timer2 = 0;			//スタミナ用タイマー
+			var c=0;
 			
 			var count = 0;			//クリックしたカード枚数
 			var id1;				//1枚目のカードID
@@ -398,7 +401,7 @@
 			}
 					
 					
-			
+					
 			//過去のベストスコアを表示
 			displayScore();
 			
@@ -423,6 +426,7 @@
 					}
 					
 					
+					
 					//時間経過を表すタイマー表示
 					timer = setInterval(showTime,1000);
 					
@@ -431,10 +435,12 @@
 						document.getElementById("timer").innerHTML = formatTime(t);
 					}
 					
+					
+					
 					//スタミナバーを動かす
 					timer2 = setInterval(show, 1000);
-					
-					function show(){
+					function show(){ 
+						
 						if(c<=15){
 							if(c>=0){
 								c++;
@@ -444,9 +450,11 @@
 							}
 						}
 							else{
-								document.getElementById("gameover").style.display = "block";
-								clearInterval(timer);
-								clearInterval(timer2);
+								if(c==16){
+									document.getElementById("gameover").style.display = "block";
+									clearInterval(timer);
+									clearInterval(timer2);
+								}
 							}
 						}
 					}
@@ -466,7 +474,7 @@
 				if(count==1){
 					var id="b"+i;
 					var element = document.getElementById(id);
-					element.style.backgroundColor = "#ffa49f";
+					element.style.backgroundColor = "#f00";
 					
 					id1=id;
 					a=document.getElementById(id).innerHTML;
@@ -484,7 +492,7 @@
 					flag=true;
 					
 					var element = document.getElementById(id);
-					element.style.backgroundColor = "#ffa49f";
+					element.style.backgroundColor = "#f00";
 					
 					id2=id;
 					b=document.getElementById(id).innerHTML;
@@ -520,8 +528,8 @@
 							document.getElementById(id1).innerHTML = a;
 							document.getElementById(id2).innerHTML = b;
 							
-							document.getElementById(id1).style.backgroundColor = "#ff2e6a";
-							document.getElementById(id2).style.backgroundColor = "#ff2e6a";
+							document.getElementById(id1).style.backgroundColor = "#000";
+							document.getElementById(id2).style.backgroundColor = "#000";
 							
 							
 							flag=false;
@@ -539,7 +547,7 @@
 				for(var i=1; i<=16; i++){
 				var id="c"+i;
 				var element = document.getElementById(id);
-				element.style.backgroundColor = "#ffa49f";
+				element.style.backgroundColor = "#f00";
 				}
 			}
 			

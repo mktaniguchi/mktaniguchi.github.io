@@ -63,7 +63,7 @@ tr{
 	width:350px;
 	height:450px;
 	margin-top:50px;
-	font-size:30px;
+	font-size:25px;
 	font-family: "Lobster", sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -330,6 +330,47 @@ tr{
 	font-size:24px;
 }
 
+.works1{
+	width:300px;
+	height:200px;
+	border:5px solid #8b4513;
+	background-color:#E8E2B2;
+	float:left;
+	border-radius:30px 30px 30px 30px;
+	display: flex;
+    justify-content: center;  /* 横方向の中央 */
+    align-items: center;      /* 縦方向の中央 */
+    color:#8b4513;
+	font-family: "Plaster", system-ui;
+	font-size:18px;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.works2{
+	width:300px;
+	height:70px;
+	float:left;
+	margin-top:30px;
+	color:#8b4513;
+	font-family: "Plaster", system-ui;
+	font-size:24px;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-weight: bold
+}
+
+.hvr-grow{
+    float:left;
+    transition: transform 0.3s;
+}
+
+.hvr-grow:hover{
+    transform: scale(1.1);
+}
 .under{
 	font-size:50px;
 	color:#f30100;
