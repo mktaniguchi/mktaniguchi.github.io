@@ -91,7 +91,7 @@
 
 
 		.stamina {
-			width: 90%;
+			width: 95%;
 			flex: 1;
 			min-height: 0;
 			background-color: #f00;
@@ -255,6 +255,23 @@
 			position: relative;
 			background: url("retorotv.png") center center no-repeat;
 			background-size: 100% 100%;
+			
+			image-rendering: pixelated;
+			filter: contrast(150%) saturate(120%) sepia(20%);
+		}
+		
+		.tv-container::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: repeating-linear-gradient(
+    		to bottom,
+    		rgba(0,0,0,0.15) 0px,
+    		rgba(0,0,0,0.15) 2px,
+    		transparent 2px,
+    		transparent 4px
+  			);
+  			pointer-events: none;
 		}
 
 		/* テレビ画面の中 */
@@ -269,6 +286,7 @@
 
 			overflow: hidden;
 			container-type: size;
+			
 		}
 
 		button {
