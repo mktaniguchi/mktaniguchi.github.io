@@ -637,6 +637,11 @@
 
 			//ペア同士をクリックしたら消えるようにする
 			function clk(i) {
+				// STARTボタンを押すまでカードをクリックできない
+				if (mode == "stop") {
+				return;
+				}
+				
 				if (flag == true) {
 					return;
 				}
