@@ -39,7 +39,7 @@
 			gap: 0.6cqh;
 			width: max-content;
 			margin: 0 auto;
-			justify-self:center;
+			justify-self: center;
 			transform: translateX(6cqh);
 		}
 
@@ -94,7 +94,7 @@
 			width: 90%;
 			flex: 1;
 			min-height: 0;
-			background-color: #f00;
+			background-color: #0f0;
 			margin: 0;
 		}
 
@@ -158,7 +158,7 @@
 		.score-title {
 			font-size: 2.7cqh;
 			margin-bottom: 2.8cqh;
-			
+
 		}
 
 		.score-list {
@@ -201,7 +201,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(255, 0, 0, 0.6);
+			background-color: rgba(0, 0, 0, 0.6);
 			display: none;
 			z-index: 10;
 			text-align: center;
@@ -210,8 +210,19 @@
 
 		.clear-text {
 			font-size: 60px;
-			color: #fff;
 			font-weight: bold;
+			background: linear-gradient(to right, #e60000, #f39800, #fff100, #009944, #0068b7, #1d2088, #920783, #e60000) 0 / 200%;
+			height: 80px;
+			animation: 5s rainbow infinite;
+			background-clip: text;
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+
+		@keyframes rainbow {
+			100% {
+				background-position: 200%;
+			}
 		}
 
 		#clear button {
@@ -255,23 +266,21 @@
 			position: relative;
 			background: url("retorotv.png") center center no-repeat;
 			background-size: 100% 100%;
-			
+
 			image-rendering: pixelated;
 			filter: contrast(150%) saturate(120%) sepia(20%);
 		}
-		
+
 		.tv-container::after {
 			content: "";
 			position: absolute;
 			inset: 0;
-			background: repeating-linear-gradient(
-    		to bottom,
-    		rgba(0,0,0,0.15) 0px,
-    		rgba(0,0,0,0.15) 2px,
-    		transparent 2px,
-    		transparent 4px
-  			);
-  			pointer-events: none;
+			background: repeating-linear-gradient(to bottom,
+					rgba(0, 0, 0, 0.15) 0px,
+					rgba(0, 0, 0, 0.15) 2px,
+					transparent 2px,
+					transparent 4px);
+			pointer-events: none;
 		}
 
 		/* テレビ画面の中 */
@@ -286,7 +295,7 @@
 
 			overflow: hidden;
 			container-type: size;
-			
+
 		}
 
 		button {
@@ -535,7 +544,9 @@
 
 
 				<div id="clear">
-					<div class="clear-text">GAME CLEAR!</div>
+					<div class="clear-text">
+						GAME CLEAR!!
+					</div>
 					<button class="hvr-box-shadow-outset" onclick="location.reload()">RETRY!</button>
 				</div>
 			</div>
@@ -609,28 +620,49 @@
 
 
 
-					//スタミナバーを動かす
+
+
+					// スタミナバーを動かす
 					timer2 = setInterval(show, 1000);
+
 					function show() {
 
-						if (c <= 15) {
-							if (c >= 0) {
-								c++;
-								var id = "c" + c;
+						if (c < 16) {
+							c++;
+
+							// スタミナを1つ消す
+							var id = "c" + c;
+							var element = document.getElementById(id);
+							element.style.backgroundColor = "transparent";
+
+							// 残っているスタミナの色を変更
+							for (var i = c + 1; i <= 16; i++) {
+								var id = "c" + i;
 								var element = document.getElementById(id);
-								element.style.backgroundColor = "transparent";
+
+								if (c <= 5) {
+									element.style.backgroundColor = "#00cc00"; // 緑
+								}
+								else if (c <= 10) {
+									element.style.backgroundColor = "#FFC800"; // 黄色
+								}
+								else {
+									element.style.backgroundColor = "#ff0000"; // 赤
+								}
 							}
 						}
-						else {
-							if (c == 16) {
-								document.getElementById("gameover").style.display = "block";
-								clearInterval(timer);
-								clearInterval(timer2);
-							}
+
+						// スタミナがすべてなくなったらGAME OVER
+						if (c >= 16) {
+							document.getElementById("gameover").style.display = "block";
+							clearInterval(timer);
+							clearInterval(timer2);
 						}
 					}
+
 				}
 			}
+
 
 
 
@@ -639,10 +671,18 @@
 			function clk(i) {
 				// STARTボタンを押すまでカードをクリックできない
 				if (mode == "stop") {
-				return;
+					return;
 				}
-				
+
 				if (flag == true) {
+					return;
+				}
+
+				// すでに消えたカードはクリックできない
+				var checkId = "b" + i;
+				var checkElement = document.getElementById(checkId);
+
+				if (checkElement.innerHTML == "") {
 					return;
 				}
 
@@ -651,7 +691,7 @@
 				if (count == 1) {
 					var id = "b" + i;
 					var element = document.getElementById(id);
-					element.style.backgroundColor = "#f00";
+					element.style.backgroundColor = "#808080";
 
 					id1 = id;
 					a = document.getElementById(id).innerHTML;
@@ -669,7 +709,7 @@
 					flag = true;
 
 					var element = document.getElementById(id);
-					element.style.backgroundColor = "#f00";
+					element.style.backgroundColor = "#808080";
 
 					id2 = id;
 					b = document.getElementById(id).innerHTML;
@@ -724,8 +764,16 @@
 				for (var i = 1; i <= 16; i++) {
 					var id = "c" + i;
 					var element = document.getElementById(id);
-					element.style.backgroundColor = "#f00";
+					element.style.backgroundColor = "#00cc00";
 				}
+
+				// クリック中のカードを裏向きに戻す
+				if (count == 1) {
+					document.getElementById(id1).style.backgroundColor = "#000";
+				}
+
+				// クリック枚数をリセット
+				count = 0;
 			}
 
 
