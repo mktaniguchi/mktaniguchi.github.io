@@ -8,6 +8,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
 
 	<style>
 		.game-title {
@@ -72,7 +74,6 @@
 
 			color: #fff;
 			background-color: #000;
-			border: 2px solid #000;
 
 			cursor: pointer;
 			transform: translateX(-1.8cqh);
@@ -165,6 +166,77 @@
 			width: 100%;
 		}
 
+		#howtoplay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			display: block;
+			z-index: 9999;
+			text-align: center;
+			padding-top: 200px;
+		}
+
+		.rule {
+			display: flex;
+			align-items: flex-start;
+			width: 700px;
+			max-width: 90%;
+			margin: 0 auto 20px;
+			font-size: 20px;
+			color: #fff;
+			font-weight: 400;
+			font-family: "DotGothic16", sans-serif;
+			text-align: left;
+			position: relative;
+			left:70px;
+			top:50px;
+		}
+
+		.rule2 {
+			font-size: 20px;
+			color: #fff;
+			font-weight: 400;
+			font-family: "DotGothic16", sans-serif;
+			text-align: center;
+			position: relative;
+			top:80px;
+		}
+
+
+		.number {
+			display: inline-block;
+			width: 40px;
+			flex-shrink: 0;
+			text-align: right;
+			margin-right: 10px;
+			font-size: 20px;
+			color: #fff;
+			font-weight: bold;
+			font-family: "DotGothic16", sans-serif;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.howtoplay-title {
+			font-size: 40px;
+			color: #fff;
+			font-weight: bold;
+			margin-top: -100px;
+		}
+
+		#howtoplay button {
+			width: 300px;
+			height: 50px;
+			font-size: 20px;
+			margin-top: 100px;
+			color: #fff;
+			background-color: #000;
+
+		}
+
 
 		#gameover {
 			position: fixed;
@@ -172,7 +244,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.6);
+			background-color: rgba(0, 0, 0, 0.7);
 			display: none;
 			z-index: 9999;
 			text-align: center;
@@ -201,7 +273,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.6);
+			background-color: rgba(0, 0, 0, 0.7);
 			display: none;
 			z-index: 10;
 			text-align: center;
@@ -217,6 +289,7 @@
 			background-clip: text;
 			-webkit-background-clip: text;
 			color: transparent;
+			margin-top: -50px;
 		}
 
 		@keyframes rainbow {
@@ -225,11 +298,24 @@
 			}
 		}
 
+		#clear-time {
+			color: #fff;
+			font-size: 24px;
+			margin-top: 50px;
+		}
+
+		#best-message {
+			color: #fff100;
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+
 		#clear button {
 			width: 200px;
 			height: 50px;
 			font-size: 24px;
-			margin-top: 30px;
+			margin-top: 50px;
 			color: #fff;
 			background-color: #000;
 		}
@@ -539,7 +625,7 @@
 
 				<div id="gameover">
 					<div class="gameover-text">GAME OVER</div>
-					<button class="hvr-box-shadow-outset" onclick="location.reload()">RETRY!</button>
+					<button class="hvr-box-shadow-outset" onclick="resetGame()">RETRY!</button>
 				</div>
 
 
@@ -547,15 +633,38 @@
 					<div class="clear-text">
 						GAME CLEAR!!
 					</div>
-					<button class="hvr-box-shadow-outset" onclick="location.reload()">RETRY!</button>
+
+					<!-- クリアタイム -->
+					<div id="clear-time"></div>
+
+					<!-- ベストスコア更新時のみ表示 -->
+					<div id="best-message"></div>
+
+					<button class="hvr-box-shadow-outset" onclick="resetGame()">RETRY!</button>
 				</div>
 
 				<div id="howtoplay">
-					<div class="howtoplay-text">
-						How to Play<br>
-						このゲームの遊び方<br>
+					<div class="howtoplay-title">
+						How to Play
 					</div>
-					<button class="hvr-box-shadow-outset" onclick="location.reload()">RETRY!</button>
+					<div class="rule">
+						<span class="number">1.</span>
+						<span>同じ数字のカードを2枚クリックして、ペアを消そう</span>
+					</div>
+
+					<div class="rule">
+						<span class="number">2.</span>
+						<span>ゲーム内のスタミナがなくなる前に、♡ボタンで回復</span>
+					</div>
+
+					<div class="rule">
+						<span class="number">3.</span>
+						<span>スタミナがすべてなくなると、ゲームオーバー</span>
+					</div>
+
+					<div class="rule2">★ベストスコアを目指そう★</div>
+
+					<button class="hvr-box-shadow-outset" onclick="play();">Let's PLAY!!</button>
 				</div>
 			</div>
 		</div>
@@ -576,6 +685,11 @@
 			var mode = "stop";		//ゲーム開始状態
 			var flag = false;		//ペア判定中のクリック制御
 
+			//Let'sPLAYボタンを押すと、説明画面が消える
+			function play() {
+				document.getElementById("howtoplay").style.display = "none";
+			}
+
 
 			// ベストスコアを読み込む
 			var scores = JSON.parse(localStorage.getItem("bestScores")) || [];	//ベストスコア
@@ -595,6 +709,47 @@
 
 			//過去のベストスコアを表示
 			displayScore();
+
+			// ゲームを初期状態に戻す
+			function resetGame() {
+
+				// タイマーを停止
+				clearInterval(timer);
+				clearInterval(timer2);
+
+				// ゲームの状態をリセット
+				t = 0;
+				c = 0;
+				count = 0;
+				clearCount = 0;
+				mode = "stop";
+				flag = false;
+
+				// タイマー表示をリセット
+				document.getElementById("timer").innerHTML = "00:00";
+
+				// カードを初期状態に戻す
+				for (var i = 0; i < 64; i++) {
+					var id = "b" + i;
+					var element = document.getElementById(id);
+
+					element.innerHTML = Math.floor(i / 2) + 1;
+					element.style.backgroundColor = "#000";
+				}
+
+				// スタミナバーをリセット
+				for (var i = 1; i <= 16; i++) {
+					var id = "c" + i;
+					document.getElementById(id).style.backgroundColor = "#00cc00";
+				}
+
+				// ゲームオーバー・クリア画面を非表示
+				document.getElementById("gameover").style.display = "none";
+				document.getElementById("clear").style.display = "none";
+
+				// 説明画面も非表示
+				document.getElementById("howtoplay").style.display = "none";
+			}
 
 			function start() {
 				if (mode == "stop") {
@@ -736,15 +891,32 @@
 
 							//64枚すべて消えたらクリア画面を表示
 							if (clearCount == 64) {
+								// クリア画面を表示
 								document.getElementById("clear").style.display = "block";
 
-								//タイマーを停止
+								// タイマーを停止
 								clearInterval(timer);
 								clearInterval(timer2);
 
-								//ベストスコアを登録
+								// クリアタイムを表示
+								document.getElementById("clear-time").innerHTML =
+									"CLEAR TIME : " + formatTime(t);
+
+								// ベストスコアを更新したか判定
+								if (scores.length == 0 || t < scores[0]) {
+
+									document.getElementById("best-message").innerHTML =
+										"BEST SCORE";
+
+								} else {
+
+									document.getElementById("best-message").innerHTML = "";
+								}
+
+								// ベストスコアを登録
 								saveScore(t);
 							}
+
 							flag = false;
 						}, 500);
 

@@ -1,15 +1,13 @@
-html{
+* {
+	box-sizing: border-box;
+}
+
+html {
 	scroll-behavior: smooth;
-	margin:0;
-	padding:0;
 }
 
-div{
-	box-sizing:border-box;
-}
-
-a{
-	cursor:pointer;
+a {
+	cursor: pointer;
 }
 
 body {
@@ -21,203 +19,192 @@ body {
 	background-size: 80px 80px;
 }
 
-.subtitle{
-	width:800px;
-	height:80px;
-	margin:0 auto;
+/* Worksタイトル */
+.subtitle {
+	width: min(800px, calc(100% - 40px));
+	min-height: 80px;
+	margin: 50px auto 40px;
 	font-family: "Plaster", system-ui;
-	font-size:60px;
-	color:#f30100;
-	text-align:center;
+	font-size: clamp(36px, 5vw, 60px);
+	color: #f30100;
+	text-align: center;
 	border-bottom: 3px solid #f30100;
 }
 
-.theme{
-	float:left;
-	width:500px;
-	height:30px;
-	font-size:60px;
-	font-family: "Lobster", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	color:#8b4513;
-	margin-left:50px;
+/* メインボックス */
+.box1 {
+	width: min(1200px, calc(100% - 40px));
+	margin: 0 auto 50px;
+	padding: 50px;
+	background-color: #E8E2B2;
+	border-radius: 30px;
+	position: relative;
 }
 
-.box1{
-	display: flex;
-    justify-content:flex-start; 
-    align-items: flex-start;     
-    padding-top: 300px;
-    padding-left: 50px;
-    position: relative;
+/* 点線の枠 */
+.box1::before {
+	content: "";
+	position: absolute;
+	inset: 10px;
+	border: 5px dotted #8b4513;
+	border-radius: 20px;
+	pointer-events: none;
 }
 
-.box1::before{
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 5px dotted #8b4513;
-    border-radius: 20px;
-    pointer-events: none;
-}
-
-.hiragana{
-	width:1200px;
-	height:50px;
-	margin:0 auto;
-	font-family: "Plaster", system-ui;
-	font-size:42px;
-	color:#8b4513;
-	text-align:center;
+/* 見出し */
+.hiragana {
+	width: 100%;
+	text-align: center;
+	color: #8b4513;
 	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 	font-weight: bold;
-	position: absolute;
-	top:50px;
+	margin-bottom: 35px;
 }
 
-.text{
-	width:450px;
-	margin:0 auto;
-	font-family: "Plaster", system-ui;
-	font-size:13px;
-	color:#8b4513;
+.category {
+	font-size: 20px;
+}
+
+.theme {
+	font-size: clamp(36px, 5vw, 60px);
+	font-family: "Lobster", sans-serif;
+	color: #8b4513;
+	margin-top: 10px;
+}
+
+/* 画像と文章 */
+.main-content {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+	gap: 35px;
+	align-items: start;
+}
+
+.image-area {
+	width: 100%;
+}
+
+.image-area img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.text {
+	width: 100%;
 	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	position: absolute;
-	top:320px;
-	right:40px;
+	font-size: 13px;
+	line-height: 1.8;
+	color: #8b4513;
+	overflow-wrap: anywhere;
 }
 
-.color-text{
-	position: absolute;
-	top:720px;
-	left:50px;
-	font-family: "Plaster", system-ui;
-	font-size:18px;
-	color:#8b4513;
+/* 使用カラー */
+.color-area {
+	margin-top: 35px;
 	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	font-weight:bold;
+	font-size: 15px;
+	font-weight: bold;
+	color: #8b4513;
 }
 
-.color-box1{
-	width:90px;
-	height:90px;
-	background-color:#f30100;
-	position: absolute;
-	top:720px;
-	left:200px;
-	border-radius: 45px;
+.color-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px;
+	margin-top: 15px;
 }
 
-.color-box2{
-	width:90px;
-	height:90px;
-	background-color:#8b4513;
-	position: absolute;
-	top:720px;
-	left:325px;
-	border-radius: 45px;
+.color-item {
+	text-align: center;
+	font-size: 13px;
+	font-weight: normal;
 }
 
-.color-box3{
-	width:90px;
-	height:90px;
-	background-color:#e8deab;
-	position: absolute;
-	top:720px;
-	left:450px;
-	border-radius: 45px;
-	border:1px solid #8b4513;
+.color-item>div:last-child {
+	margin-top: 8px;
 }
 
-.color-box4{
-	width:90px;
-	height:90px;
-	background-color:#e8e2b2;
-	position: absolute;
-	top:720px;
-	left:575px;
-	border-radius: 45px;
-	border:1px solid #8b4513;
+.color-box1,
+.color-box2,
+.color-box3,
+.color-box4,
+.color-box5 {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
 }
 
-.color-box5{
-	width:90px;
-	height:90px;
-	background-color:#fff;
-	position: absolute;
-	top:720px;
-	left:700px;
-	border-radius: 45px;
-	border:1px solid #8b4513;
+.color-box1 {
+	background-color: #f30100;
 }
 
-
-.color-text1{
-	position: absolute;
-	top:820px;
-	left:215px;
-	font-family: "Plaster", system-ui;
-	font-size:13px;
-	color:#8b4513;
-	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
+.color-box2 {
+	background-color: #8b4513;
 }
 
-.color-text2{
-	position: absolute;
-	top:820px;
-	left:340px;
-	font-family: "Plaster", system-ui;
-	font-size:13px;
-	color:#8b4513;
-	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
+.color-box3 {
+	background-color: #e8deab;
+	border: 1px solid #8b4513;
 }
 
-.color-text3{
-	position: absolute;
-	top:820px;
-	left:465px;
-	font-family: "Plaster", system-ui;
-	font-size:13px;
-	color:#8b4513;
-	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
+.color-box4 {
+	background-color: #e8e2b2;
+	border: 1px solid #8b4513;
 }
 
-.color-text4{
-	position: absolute;
-	top:820px;
-	left:590px;
-	font-family: "Plaster", system-ui;
-	font-size:13px;
-	color:#8b4513;
-	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
+.color-box5 {
+	background-color: #fff;
+	border: 1px solid #8b4513;
 }
 
-.color-text5{
-	position: absolute;
-	top:820px;
-	left:725px;
-	font-family: "Plaster", system-ui;
-	font-size:13px;
-	color:#8b4513;
-	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-weight: 400;
-	font-style: normal;
+/* 画面が狭い場合 */
+@media screen and (max-width: 768px) {
+
+	.box1 {
+		padding: 35px 25px;
+	}
+
+	.main-content {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+
+	.color-list {
+		gap: 20px;
+	}
+}
+
+/* スマートフォンなど、さらに狭い場合 */
+@media screen and (max-width: 480px) {
+
+	.box1 {
+		width: calc(100% - 20px);
+		padding: 30px 20px;
+	}
+
+	.subtitle {
+		width: calc(100% - 40px);
+	}
+
+	.category {
+		font-size: 16px;
+	}
+
+	.text {
+		font-size: 12px;
+	}
+
+	.color-box1,
+	.color-box2,
+	.color-box3,
+	.color-box4,
+	.color-box5 {
+		width: 55px;
+		height: 55px;
+	}
+
+	.color-list {
+		gap: 15px;
+	}
 }
