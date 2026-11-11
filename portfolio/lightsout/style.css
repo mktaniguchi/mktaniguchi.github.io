@@ -10,8 +10,6 @@ div{
 
 a{
 	cursor:pointer;
-	text-decoration:none;
-	color: inherit;
 }
 
 body {
@@ -23,41 +21,21 @@ body {
 	background-size: 80px 80px;
 }
 
-tr{
-	height:55px;
-}
-
-.base{
-	width:1200px;
-	margin:0 auto;
-}
-
-.title{
-	width:1200px;
-	height:100px;
-	margin:0 auto;
-	font-family: "Plaster", system-ui;
-	font-weight: 400;
-	font-style: normal;
-	font-size:85px;
-	color:#f30100;
-}
-
-
 .subtitle{
-	width:600px;
-	height:100px;
+	width:800px;
+	height:80px;
 	margin:0 auto;
 	font-family: "Plaster", system-ui;
 	font-size:60px;
 	color:#f30100;
 	text-align:center;
+	border-bottom: 3px solid #f30100;
 }
 
 .theme{
 	float:left;
-	width:190px;
-	height:60px;
+	width:500px;
+	height:30px;
 	font-size:60px;
 	font-family: "Lobster", sans-serif;
 	font-weight: 400;
@@ -66,4 +44,180 @@ tr{
 	margin-left:50px;
 }
 
+.box1{
+	display: flex;
+    justify-content:flex-start; 
+    align-items: flex-start;     
+    padding-top: 300px;
+    padding-left: 50px;
+    position: relative;
+}
 
+.box1::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 5px dotted #8b4513;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.hiragana{
+	width:1200px;
+	height:50px;
+	margin:0 auto;
+	font-family: "Plaster", system-ui;
+	font-size:42px;
+	color:#8b4513;
+	text-align:center;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-weight: bold;
+	position: absolute;
+	top:50px;
+}
+
+.text{
+	width:450px;
+	margin:0 auto;
+	font-family: "Plaster", system-ui;
+	font-size:13px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	position: absolute;
+	top:320px;
+	right:40px;
+}
+
+.color-text{
+	position: absolute;
+	top:720px;
+	left:50px;
+	font-family: "Plaster", system-ui;
+	font-size:18px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-weight:bold;
+}
+
+.color-box1{
+	width:90px;
+	height:90px;
+	background-color:#f30100;
+	position: absolute;
+	top:720px;
+	left:200px;
+	border-radius: 45px;
+}
+
+.color-box2{
+	width:90px;
+	height:90px;
+	background-color:#8b4513;
+	position: absolute;
+	top:720px;
+	left:325px;
+	border-radius: 45px;
+}
+
+.color-box3{
+	width:90px;
+	height:90px;
+	background-color:#e8deab;
+	position: absolute;
+	top:720px;
+	left:450px;
+	border-radius: 45px;
+	border:1px solid #8b4513;
+}
+
+.color-box4{
+	width:90px;
+	height:90px;
+	background-color:#e8e2b2;
+	position: absolute;
+	top:720px;
+	left:575px;
+	border-radius: 45px;
+	border:1px solid #8b4513;
+}
+
+.color-box5{
+	width:90px;
+	height:90px;
+	background-color:#fff;
+	position: absolute;
+	top:720px;
+	left:700px;
+	border-radius: 45px;
+	border:1px solid #8b4513;
+}
+
+
+.color-text1{
+	position: absolute;
+	top:820px;
+	left:215px;
+	font-family: "Plaster", system-ui;
+	font-size:13px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.color-text2{
+	position: absolute;
+	top:820px;
+	left:340px;
+	font-family: "Plaster", system-ui;
+	font-size:13px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.color-text3{
+	position: absolute;
+	top:820px;
+	left:465px;
+	font-family: "Plaster", system-ui;
+	font-size:13px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.color-text4{
+	position: absolute;
+	top:820px;
+	left:590px;
+	font-family: "Plaster", system-ui;
+	font-size:13px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.color-text5{
+	position: absolute;
+	top:820px;
+	left:725px;
+	font-family: "Plaster", system-ui;
+	font-size:13px;
+	color:#8b4513;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
