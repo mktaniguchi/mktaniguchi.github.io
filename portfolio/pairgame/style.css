@@ -136,26 +136,24 @@ body {
 }
 
 .color-box1 {
-	background-color: #f30100;
+	background-color: #000000;
 }
 
 .color-box2 {
-	background-color: #8b4513;
+	background-color: #ffffff;
+	border: 1px solid #8b4513;
 }
 
 .color-box3 {
-	background-color: #e8deab;
-	border: 1px solid #8b4513;
+	background-color: #ff0000;
 }
 
 .color-box4 {
-	background-color: #e8e2b2;
-	border: 1px solid #8b4513;
+	background-color: #00cc00;
 }
 
 .color-box5 {
-	background-color: #fff;
-	border: 1px solid #8b4513;
+	background-color: #FFC800;
 }
 
 /* 画面が狭い場合 */
