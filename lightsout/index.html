@@ -5,6 +5,10 @@
 	<meta name="robots" content="noindex">
 
 	<style>
+		:root {
+			--cell-size: clamp(48px, calc((100vh - 260px) / 5 - 10px), 90px);
+		}
+		
 		body {
 			margin: 0;
 			min-height: 100vh;
@@ -67,8 +71,8 @@
 
 		.box {
 			box-sizing: border-box;
-			width: 90px;
-			height: 90px;
+			width: var(--cell-size);
+			height: var(--cell-size);
 			float: left;
 			margin-left: 10px;
 			margin-bottom: 10px;
@@ -123,12 +127,12 @@
 		.game-layout {
 			display: grid;
 
-			grid-template-columns: 240px 500px 240px;
+			grid-template-columns: 240px calc((var(--cell-size) + 10px) * 5) 240px;
 
 			gap: 30px;
 
 			justify-content: center;
-			align-items: center;
+			align-items: start;
 
 			width: 1040px;
 			margin: 30px auto;
@@ -153,6 +157,7 @@
 			border-radius: 15px;
 			box-shadow: 0 0 12px rgba(183, 138, 255, 0.4);
 			color: white;
+			transform: translateY(10px);
 		}
 
 		.howto h3 {
@@ -163,12 +168,12 @@
 
 		/* 中央：ゲーム */
 		.game-area {
-			width: 500px;
+			width: calc((var(--cell-size) + 10px) * 5);
 		}
 
 		.board {
-			width: 500px;
-			height: 500px;
+			width: calc((var(--cell-size) + 10px) * 5);
+			height: calc((var(--cell-size) + 10px) * 5);
 			display: flow-root;
 		}
 
@@ -177,12 +182,18 @@
 			display: flex;
 			flex-direction: column;
 			gap: 25px;
+			transform: translateY(10px);
 		}
 
 		.status-box {
 			box-sizing: border-box;
 			padding: 20px;
 			text-align: center;
+			
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
 			background-color: rgba(50, 38, 75, 0.85);
 			border: 1px solid #B78AFF;
@@ -195,6 +206,7 @@
 			color: #D9A6FF;
 			font-size: 16px;
 			letter-spacing: 3px;
+			margin-top:0px;
 		}
 
 		.status-box div {
